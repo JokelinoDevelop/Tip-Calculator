@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root{
+    --strong-cyan: hsl(172, 67%, 45%);
+    --button-hover-cyan: hsl(172, 51%, 70%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body{
+    font-family: 'Space Mono', monospace;
+    background-color: var(--light-grayish-cyan);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+input{
+    width: 100%;
+    border: none;
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--very-dark-cyan);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
+    text-align: right;
+}
+
+input:focus{
+    outline:2px solid hsl(172, 67%, 45%);
+}
+
+.main-container{
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.splitter{
+    margin: 2rem auto;
+    line-height: 1.2;
+    max-width: 6ch;
+    color: var(--dark-grayish-cyan);
+    letter-spacing: 8px;
+}
+
+.input-value{
+    margin-top: 0.5rem;
+    position: relative;
+    margin-bottom: 1.2rem;
+}
+
+.input-value img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+}
+
+/* Bill Container */
+
+.container{
+    display: grid;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 20px 20px 0 0;
+}
+
+@media(min-width:1024px){
+
+    body{
+        display: grid;
+        place-content: center;
+    }
+
+    .main-container{
+        max-width: 900px;
+        transform: translateY(-3rem);
+    }
+
+    .container{
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        border-radius: 20px;
+    }
+}
+
+.container .bill-configurator p{
+    color: var(--dark-grayish-cyan);
+    letter-spacing: 1px;
+}
+
+
+.container .bill-configurator .tip .tip-btns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1rem 0;
+}
+
+.container .bill-configurator .tip .tip-btns button{
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 0.4rem 0;
+    color: #fff;
+    background-color: var(--very-dark-cyan);
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in;
+}
+
+.container .bill-configurator .tip .tip-btns button:hover{
+    color: var(--very-dark-cyan);
+    background-color: var(--button-hover-cyan);
+}
+
+.container .bill-configurator .tip .tip-btns button:focus{
+    color: var(--very-dark-cyan);
+    background-color: var(--strong-cyan);
+}
+
+.container .bill-configurator .tip .tip-btns input{
+    background-color: var(--very-light-grayish-cyan);
+}
+
+.container .bill-configurator .tip .tip-btns input::placeholder{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--very-dark-cyan);
+}
+
+/* Total */
+
+.container .total{
+    background-color: var(--very-dark-cyan);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.container .total h1{
+    color: var(--strong-cyan);
+}
+
+@media(max-width:1024px){
+    .container .total h1{
+        font-size: 1.5rem;
+    }
+}
+
+.container .total .tip-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container .total .tip-wrapper div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .total div .tip-cont{
+    display: block;
+}
+
+.container .total div .tip-cont h3{
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 1.2px;
+}
+
+.container .total div .tip-cont p{
+    color: var(--grayish-cyan);
+    font-size: 0.9rem;
+}
+
+@media(max-width:1024px){
+    .container .total div .tip-cont h3{
+        font-size: 1rem;
+    }
+}
+
+.container .total button{
+    cursor: pointer;
+    background-color: var(--strong-cyan);
+    font-size: 1.3rem;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 10px;
+    color: var(--very-dark-cyan);
+    transition: all 0.3s ease-in;
+}
+
+.container .total button:hover{
+    background-color: var(--button-hover-cyan);
+}
+
+/* Utility */
+
+.title-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-flex ul li{
+    color: rgb(246, 85, 85);
+}
+
+.disabled{
+    opacity: 0.5;
+}
